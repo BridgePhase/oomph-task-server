@@ -163,6 +163,7 @@ public abstract class ServerCreator
   protected void setCommon(ServerWorkingCopy cswc, Server serverTask)
   {
     cswc.setAutoPublishSetting(org.eclipse.wst.server.core.internal.Server.AUTO_PUBLISH_DISABLE);
+    cswc.setAttribute("modulesReloadableByDefault", false);
 
     Integer startTimeout = serverTask.startTimeout();
     if (startTimeout != null)
