@@ -93,6 +93,9 @@ public abstract class ServerCreator
       throw new ServerTaskException("Unable to locate JRE at " + jreVersion);
     }
 
+    for (IVMInstall install : vmInstallType.getVMInstalls()) {
+    	context.log("Found vms " + install.getName() + " - " + install.getVMInstallType());
+    }
     IVMInstall vmInstall = vmInstallType.findVMInstallByName(jreVersion);
     if (vmInstall == null)
     {
